@@ -1,0 +1,21 @@
+workdir="/workspace/"
+
+docker run  \
+    -it \
+    --rm \
+    --workdir $workdir \
+    --volume $(pwd)/wkpd:$workdir \
+    composer create-project laravel/laravel . &&
+
+
+sudo chown -R $(id -g -n):$(id -g -n) wkpd &&
+
+
+cp -r $(pwd)/wkpd/.  $(pwd) &&
+
+rm $(pwd)/wkpd -dr
+
+docker run --rm \
+    --user $(id -u):$(id -g) \
+    -v $(pwd)/:/app/ \
+    composer install
