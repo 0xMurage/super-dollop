@@ -1,6 +1,6 @@
 ## Laravel Installation Script
 
-A script to setup laravel project and install  composer dependencies.
+A script to setup [laravel](https://laravel.com/) project and install  composer dependencies.
 
 #### Prerequisites
 - Docker
@@ -13,4 +13,4 @@ A script to setup laravel project and install  composer dependencies.
 - You will be prompted for a password (allows for the change of file permissions).
 
 #### License
-[MIT](../License)
+[MIT](../LICENSE)
