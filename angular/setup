@@ -1,0 +1,15 @@
+workdir="/usr/src/wkp/"
+
+docker build --build-arg project=${1} -t angular-setup -f Dockerfile.setup . &&
+
+docker run -d --rm --name angular-${1} angular-setup
+
+docker cp angular-${1}:$workdir $(pwd)/wkpd/ &&
+
+docker stop angular-${1} &&
+
+sudo chown -R $(id -g -n):$(id -g -n) $(pwd)/wkpd &&
+
+cp -r $(pwd)/wkpd/.  $(pwd) &&
+
+rm -rdf $(pwd)/wkpd/

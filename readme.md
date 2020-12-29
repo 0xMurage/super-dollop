@@ -5,7 +5,8 @@ Curated projects setup scripts for various projects using [docker](https://www.d
 
 #### Available Scripts
 
-[Latest Laravel](/laravel)
+- [Latest Laravel](/laravel)
+- [Latest Angular](/angular)
 
 
 
