@@ -1,0 +1,12 @@
+FROM node:lts-alpine
+
+RUN apk add --no-cache git\
+    & npm install -g @angular/cli
+
+ARG project=angular
+
+WORKDIR /usr/src/wkp
+
+RUN ng new ${project} --directory . --interactive false --routing true --style sass
+
+CMD ng serve
